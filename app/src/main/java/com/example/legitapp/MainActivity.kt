@@ -10,7 +10,6 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import com.example.legitapp.ui.theme.LegitAppTheme
 
 
@@ -24,10 +23,10 @@ class MainActivity : ComponentActivity() {
                     contentAlignment = Alignment.Center
                 ) {
                     Button(onClick = {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"))
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://curs.upb.ro/2025"))
                         startActivity(intent)
                     }) {
-                        Text("Open Google")
+                        Text("Open Moodle")
                     }
                 }
             }
