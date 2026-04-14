@@ -67,13 +67,14 @@ class MainActivity : ComponentActivity() {
                                     putExtra(Intent.EXTRA_TEXT, noteText)
                                 }
                                 startActivity(Intent.createChooser(intent, "Share via"))
+
                             },
                             enabled = noteText.isNotBlank(),
                             modifier = Modifier.fillMaxWidth().height(52.dp),
                             shape = RoundedCornerShape(12.dp),
                             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF998A))
                         ) {
-                            Text(text = "📤 Share Notes", fontSize = 16.sp, fontWeight = FontWeight.Medium)
+                            Text(text = "📤 Share Notes (Vulnerable)", fontSize = 16.sp, fontWeight = FontWeight.Medium)
                         }
 
                         Spacer(modifier = Modifier.height(12.dp))
@@ -83,7 +84,7 @@ class MainActivity : ComponentActivity() {
                                 val intent = Intent(Intent.ACTION_SEND).apply {
                                     type = "text/plain"
                                     putExtra(Intent.EXTRA_TEXT, noteText)
-                                    setPackage("com.google.android.gm")
+                                    setPackage("com.google.android.gm") // restriction
                                 }
                                 startActivity(intent)
                             },
@@ -92,7 +93,7 @@ class MainActivity : ComponentActivity() {
                             shape = RoundedCornerShape(12.dp),
                             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF43A047))
                         ) {
-                            Text(text = "📤 Share Notes (Safe)", fontSize = 16.sp, fontWeight = FontWeight.Medium)
+                            Text(text = "📤 Share Notes (Restricted)", fontSize = 16.sp, fontWeight = FontWeight.Medium)
                         }
                     }
                 }
