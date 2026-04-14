@@ -1,5 +1,6 @@
 package com.example.legitapp
 
+import android.content.ComponentName
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -85,6 +86,11 @@ class MainActivity : ComponentActivity() {
                                     type = "text/plain"
                                     putExtra(Intent.EXTRA_TEXT, noteText)
                                     setPackage("com.google.android.gm") // restriction
+//                                    component = ComponentName(
+//                                        "com.google.android.gm",
+//                                        "com.google.android.gm.ComposeActivityGmail"
+//                                    )
+
                                 }
                                 startActivity(intent)
                             },
